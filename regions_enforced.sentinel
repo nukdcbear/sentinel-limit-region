@@ -26,6 +26,3 @@ violatingEC2Instances = plan.filter_attribute_not_in_list(allEC2Instances,
 main = rule {
   length(violatingEC2Instances["messages"]) is 0
 }
-
-    © 2020 GitHub, Inc.
-    Terms
