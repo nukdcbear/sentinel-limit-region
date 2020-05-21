@@ -14,7 +14,7 @@ allowed_regions = [
 
 # Filer AWS providers with violations
 # Warnings will be printed for all violations since the last parameter is true
-violatingAWSRegions = config.filter_attribute_not_in_list(plan.providers.aws, "region", allowed_regions, true)
+violatingAWSRegions = config.filter_attribute_not_in_list(config.providers.aws, "region", allowed_regions, true)
 
 # Main rule
 main = rule {
