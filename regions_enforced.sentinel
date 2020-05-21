@@ -4,6 +4,7 @@
 # Import common-functions/tfplan-functions/tfplan-functions.sentinel
 # with alias "plan"
 import "tfplan-functions" as plan
+import "tfconfig-functions" as config
 
 # Allowed EC2 Regions
 # Include "null" to allow missing or computed values
@@ -13,7 +14,7 @@ allowed_regions = [
 
 # Filer AWS providers with violations
 # Warnings will be printed for all violations since the last parameter is true
-violatingAWSRegions = plan.filter_attribute_not_in_list(plan.providers.aws, "region", allowed_regions, true)
+violatingAWSRegions = config.filter_attribute_not_in_list(plan.providers.aws, "region", allowed_regions, true)
 
 # Main rule
 main = rule {
